@@ -2,11 +2,11 @@ import Header from "../Common/Header";
 import Banner from "../Common/Banner";
 import Footer from "../Common/Footer";
 
-export default function About(props) {
+export default function About() {
     return (
         <>
             <Header />
-            <Banner pageName={props.pageName}/>
+            <Banner title="About us" pageName="about"/>
             <AboutSection />
             <AboutBlock />
             <AboutTeam />

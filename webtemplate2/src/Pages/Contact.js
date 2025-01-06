@@ -6,7 +6,7 @@ export default function Contact(props) {
     return (
         <>
             <Header />
-            <Banner pageName={props.pageName} />
+            <Banner title='Get in touch' pageName='Contact' />
             <ContactCompo />
             <Footer />
         </>
