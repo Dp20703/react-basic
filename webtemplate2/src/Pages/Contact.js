@@ -2,11 +2,11 @@ import Banner from "../Common/Banner";
 import Footer from "../Common/Footer";
 import Header from "../Common/Header";
 
-export default function Contact() {
+export default function Contact(props) {
     return (
         <>
             <Header />
-            <Banner />
+            <Banner pageName={props.pageName} />
             <ContactCompo />
             <Footer />
         </>

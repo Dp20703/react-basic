@@ -3,11 +3,11 @@ import Footer from "../Common/Footer";
 import Header from "../Common/Header";
 import SubService from "../Common/SubService";
 
-export default function Services() {
+export default function Services(props) {
     return (
         <>
             <Header />
-            <Banner />
+            <Banner pageName={props.pageName} />
             <ServiceBlock />
             <ServiceBlock2 />
             <SubService />
