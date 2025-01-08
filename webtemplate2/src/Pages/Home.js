@@ -44,33 +44,71 @@ function HomeGrid() {
             <section class="w3l-bottom-grids-6 py-5" id="bottom">
                 <div class="container py-lg-5 py-md-4 py-2">
                     <div class="grids-area-hny main-cont-wthree-fea row">
-                        <div class="col-lg-4 col-md-6 grids-feature">
-                            <div class="area-box">
-                                <span class="title-small mb-2">01. Video productions</span>
-                                <h4><a href="#feature" class="title-head">Stunning video sequence and impressing ideas are all here.</a></h4>
-                                <p class="">Vivamus a ligula quam. Ut blandit eu leo non. Duis sed dolor amet ipsum primis in faucibus orci dolor sit et amet.</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 grids-feature mt-md-0 mt-5">
-                            <div class="area-box">
-                                <span class="title-small mb-2">02. Branding Design</span>
-                                <h4><a href="#feature" class="title-head">Great reflection of your brand be achieved by top designers.</a></h4>
-                                <p class="">Vivamus a ligula quam. Ut blandit eu leo non. Duis sed dolor amet ipsum primis in faucibus orci dolor sit et amet.</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 grids-feature mt-lg-0 mt-5">
-                            <div class="area-box">
-                                <span class="title-small mb-2">03. Graphic Design</span>
-                                <h4><a href="#feature" class="title-head">Creating gorgeous graphic design meeting clients needs.</a></h4>
-                                <p class="">Vivamus a ligula quam. Ut blandit eu leo non. Duis sed dolor amet ipsum primis in faucibus orci dolor sit et amet.</p>
-                            </div>
-                        </div>
+                        <SubHomeGrid title='01. Video productions' subtitle='Stunning video sequence and impressing ideas are all here.' desc='Vivamus a ligula quam. Ut blandit eu leo non. Duis sed dolor amet ipsum primis in faucibus orci dolor sit et amet.' />
+                        <SubHomeGrid title='02. Branding Design' subtitle='Great reflection of your brand be achieved by top designers.' desc='Vivamus a ligula quam. Ut blandit eu leo non. Duis sed dolor amet ipsum primis in faucibus orci dolor sit et amet.' />
+                        <SubHomeGrid title='03. Graphic Design' subtitle='Creating gorgeous graphic design meeting clients needs.' desc='Vivamus a ligula quam. Ut blandit eu leo non. Duis sed dolor amet ipsum primis in faucibus orci dolor sit et amet.' />
                     </div>
                 </div>
             </section>
         </>
     );
 }
+function SubHomeGrid(props) {
+    return (
+        <>
+            <div class="col-lg-4 col-md-6 grids-feature">
+                <div class="area-box">
+                    <span class="title-small mb-2">{props.title}</span>
+                    <h4><a href="#feature" class="title-head">{props.subtitle}</a></h4>
+                    <p class="">{props.desc}</p>
+                </div>
+            </div>
+        </>
+    );
+}
+
+var ImgInfo = [
+    {
+        Img_url: "assets/images/p1.jpg",
+        Img_title: "UI experience",
+        Img_desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, quia."
+    },
+    {
+        Img_url: "assets/images/p2.jpg",
+        Img_title: "Creative Design",
+        Img_desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, quia."
+    },
+    {
+        Img_url: "assets/images/p3.jpg",
+        Img_title: "Responsive Layout",
+        Img_desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, quia."
+    },
+    {
+        Img_url: "assets/images/p4.jpg",
+        Img_title: "Modern Look",
+        Img_desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, quia."
+    },
+    {
+        Img_url: "assets/images/p5.jpg",
+        Img_title: "Clean Code",
+        Img_desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, quia."
+    },
+    {
+        Img_url: "assets/images/p6.jpg",
+        Img_title: "User Friendly",
+        Img_desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, quia."
+    },
+    {
+        Img_url: "assets/images/p7.jpg",
+        Img_title: "High Performance",
+        Img_desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, quia."
+    },
+    {
+        Img_url: "assets/images/p8.jpg",
+        Img_title: "SEO Optimized",
+        Img_desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, quia."
+    }
+];
 
 function HomeGallery() {
     return (
@@ -79,82 +117,32 @@ function HomeGallery() {
                 <div class="portfolio-main py-lg-5 py-md-4 py-2">
                     <div class="container">
                         <div class="row galler-top">
-                            <div class="col-lg-3 col-sm-6 protfolio-item hover14">
-                                <figure>
-                                    <img src="assets/images/p1.jpg" alt="product" class="img-fluid" />
-                                    <div class="img-info">
-                                        <a href="#url" class="img-title">UI experience</a>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, quia.</p>
-                                    </div>
-                                </figure>
-                            </div>
-                            <div class="col-lg-3 col-sm-6 protfolio-item hover14">
-                                <figure>
-                                    <img src="assets/images/p2.jpg" alt="product" class="img-fluid" />
-                                    <div class="img-info">
-                                        <a href="#url" class="img-title">Wordpress</a>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, quia.</p>
-                                    </div>
-                                </figure>
-                            </div>
-                            <div class="col-lg-3 col-sm-6 protfolio-item hover14">
-                                <figure>
-                                    <img src="assets/images/p3.jpg" alt="product" class="img-fluid" />
-                                    <div class="img-info">
-                                        <a href="#url" class="img-title">Ecommerce</a>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, quia.</p>
-                                    </div>
-                                </figure>
-                            </div>
-                            <div class="col-lg-3 col-sm-6 protfolio-item hover14">
-                                <figure>
-                                    <img src="assets/images/p4.jpg" alt="product" class="img-fluid" />
-                                    <div class="img-info">
-                                        <a href="#url" class="img-title">Headphones</a>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, quia.</p>
-                                    </div>
-                                </figure>
-                            </div>
-                            <div class="col-lg-3 col-sm-6 protfolio-item hover14">
-                                <figure>
-                                    <img src="assets/images/p5.jpg" alt="product" class="img-fluid" />
-                                    <div class="img-info">
-                                        <a href="#url" class="img-title">Mobile app</a>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, quia.</p>
-                                    </div>
-                                </figure>
-                            </div>
-                            <div class="col-lg-3 col-sm-6 protfolio-item hover14">
-                                <figure>
-                                    <img src="assets/images/p6.jpg" alt="product" class="img-fluid" />
-                                    <div class="img-info">
-                                        <a href="#url" class="img-title">Modern Ideas</a>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, quia.</p>
-                                    </div>
-                                </figure>
-                            </div>
-                            <div class="col-lg-3 col-sm-6 protfolio-item hover14">
-                                <figure>
-                                    <img src="assets/images/p8.jpg" alt="product" class="img-fluid" />
-                                    <div class="img-info">
-                                        <a href="#url" class="img-title">Creativity</a>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, quia.</p>
-                                    </div>
-                                </figure>
-                            </div>
-                            <div class="col-lg-3 col-sm-6 protfolio-item hover14">
-                                <figure>
-                                    <img src="assets/images/p7.jpg" alt="product" class="img-fluid" />
-                                    <div class="img-info">
-                                        <a href="#url" class="img-title">Fashion design</a>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, quia.</p>
-                                    </div>
-                                </figure>
-                            </div>
+                            {
+                                ImgInfo.map((item, index) => {
+                                    return (
+                                        <SubHomeGallery url={item.Img_url} title={item.Img_title} desc={item.Img_desc} />
+                                    );
+                                })
+                            }
                         </div>
                     </div>
                 </div>
             </section>
+        </>
+    );
+}
+function SubHomeGallery(props) {
+    return (
+        <>
+            <div class="col-lg-3 col-sm-6 protfolio-item hover14">
+                <figure>
+                    <img src={props.url} alt="product" class="img-fluid" />
+                    <div class="img-info">
+                        <a href="#url" class="img-title">{props.title}</a>
+                        <p>{props.desc}</p>
+                    </div>
+                </figure>
+            </div>
         </>
     );
 }
