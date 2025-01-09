@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Banner from "../Common/Banner";
 import Footer from "../Common/Footer";
 import Header from "../Common/Header";
@@ -14,6 +15,25 @@ export default function Contact(props) {
 }
 
 function ContactCompo() {
+    const [contactInfo, setContactInfo] = useState({
+        w3lName: '',
+        w3lSender: '',
+        w3lPhone: '',
+        w3lSubject: '',
+        w3lMessage: '',
+    })
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setContactInfo((data) => (
+            {
+                ...data,
+                [name]: value
+
+            }
+        ))
+    }
+
+    console.log(contactInfo)
     return (
         <>
             <section class="w3l-contact-7 pt-5" id="contact">
@@ -25,13 +45,13 @@ function ContactCompo() {
                                     <p class="mb-4">Your email address will not be published. Required fields are marked *</p>
                                     <form action="https://sendmail.w3layouts.com/submitForm" method="post" class="text-right">
                                         <div class="form-grid">
-                                            <input type="text" name="w3lName" id="w3lName" placeholder="Name*" required="" />
-                                            <input type="email" name="w3lSender" id="w3lSender" placeholder="Email*" required="" />
+                                            <input type="text" name="w3lName" id="w3lName" placeholder="Name*" required="" value={contactInfo.w3lName} onChange={handleChange} />
+                                            <input type="email" name="w3lSender" id="w3lSender" placeholder="Email*" required="" value={contactInfo.w3lSender} onChange={handleChange} />
                                             <input type="text" name="w3lPhone" id="w3lPhone" placeholder="Phone number*"
-                                                required="" />
-                                            <input type="text" name="w3lSubject" id="w3lSubject" placeholder="Subject" />
+                                                required="" value={contactInfo.w3lPhone} onChange={handleChange} />
+                                            <input type="text" name="w3lSubject" id="w3lSubject" placeholder="Subject" value={contactInfo.w3lSubject} onChange={handleChange} />
                                         </div>
-                                        <textarea name="w3lMessage" id="w3lMessage" placeholder="Message"></textarea>
+                                        <textarea name="w3lMessage" id="w3lMessage" placeholder="Message" value={contactInfo.w3lMessage} onChange={handleChange}></textarea>
                                         <button type="submit" class="btn btn-primary btn-style mt-3">Submit</button>
                                     </form>
                                 </div>
