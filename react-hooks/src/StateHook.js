@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Card, Container } from 'react-bootstrap'
+import { Card, Container, Table } from 'react-bootstrap'
 export default function StateHook() {
     return (
 
@@ -52,7 +52,9 @@ function FormObject() {
         userEmail: '',
         userPhone: '',
         message: ''
-    })
+    });
+    
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormdata((data) => (
@@ -64,7 +66,14 @@ function FormObject() {
         )
 
     }
-    console.log(formData)
+    console.log(formData);
+    
+    const [submitedData, setSubmitedData] = useState(null);
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setSubmitedData(formData);
+    };
+
     return (
         <>
             <Container>
@@ -73,7 +82,7 @@ function FormObject() {
                         <Card.Title><h5 className='text-center'>Form to Ojbect Using useState</h5></Card.Title>
                     </Card.Header>
                     <Card.Body>
-                        <form >
+                        <form onSubmit={handleSubmit}>
                             <div className="form-group mb-2 ">
                                 <label htmlFor="" className="form-label">Name:</label>
                                 <input type="text" name='userName' value={formData.userName} onChange={handleChange} className="form-control" placeholder='Enter name' />
@@ -95,6 +104,30 @@ function FormObject() {
                         </form>
                     </Card.Body>
                 </Card>
+                <Table>
+                    <thead>
+                        <tr>
+                            <th>Sr.no</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Message</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            submitedData && (
+                                <tr>
+                                    <td>1</td>
+                                    <td>{submitedData.userName}</td>
+                                    <td>{submitedData.userEmail}</td>
+                                    <td>{submitedData.userPhone}</td>
+                                    <td>{submitedData.message}</td>
+                                </tr>
+                            )
+                        }
+                    </tbody>
+                </Table>
             </Container>
         </>
     );
