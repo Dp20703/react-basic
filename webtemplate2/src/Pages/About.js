@@ -6,7 +6,7 @@ export default function About() {
     return (
         <>
             <Header />
-            <Banner title="About us" pageName="about"/>
+            <Banner title="About us" pageName="about" />
             <AboutSection />
             <AboutBlock />
             <AboutTeam />
